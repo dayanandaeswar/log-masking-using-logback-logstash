@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: log-data-masking
+
+app:
+  logging:
+    masking:
+      rules: (?<=phoneNumber(\":\"))(\w*(?=(\w{5})\")),(?<=loginName(\":\"))(\w*(?=(\w{5})\")),(?<=password\":\")([A-z0-9\W]*(?="))

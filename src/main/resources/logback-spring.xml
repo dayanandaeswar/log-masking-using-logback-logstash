@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty scope="context" name="rules" source="app.logging.masking.rules"
+                    defaultValue=""/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <provider class="com.daya.logging.logstash.MaskingMessagingProvider">
+                    <rules>${rules}</rules>
+                    <rulesDelimiter>${rulesDelimiter}</rulesDelimiter>
+                    <ruleDelimiter>${ruleDelimiter}</ruleDelimiter>
+                </provider>
+                <timestamp/>
+                <loggerName/>
+                <threadName/>
+                <logLevel/>
+                <logLevelValue/>
+                <mdc/>
+                <version/>
+                <stackTrace/>
+            </providers>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

@@ -10,11 +10,10 @@
                     <rulesDelimiter>${rulesDelimiter}</rulesDelimiter>
                     <ruleDelimiter>${ruleDelimiter}</ruleDelimiter>
                 </provider>
-                <timestamp/>
-                <loggerName/>
                 <threadName/>
+                <timestamp/>
                 <logLevel/>
-                <logLevelValue/>
+                <loggerName/>
                 <mdc/>
                 <version/>
                 <stackTrace/>
@@ -24,5 +23,4 @@
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
     </root>
-
 </configuration>
